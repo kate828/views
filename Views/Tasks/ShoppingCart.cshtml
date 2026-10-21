@@ -1,0 +1,17 @@
+<h2>Your shopping cart</h2>
+<form method="post" action="/Tasks/ShoppingCart">
+    <p>Input your fullname:<br/><input type="text" name="fullname" /></p>
+    <p>Input your address :<br/><input type="text" name="address" /></p>
+    
+    <p>@Html.DropDownList("supermarket", new SelectList(ViewBag.Markets))</p>
+    
+    <p>
+        <input type="radio" name="date" value="@DateTime.Now" checked /> @DateTime.Now <br/>
+        <input type="radio" name="date" value="@DateTime.Now.AddDays(1)" /> @DateTime.Now.AddDays(1) <br/>
+        <input type="radio" name="date" value="@DateTime.Now.AddDays(2)" /> @DateTime.Now.AddDays(2)
+    </p>
+    
+    <p>@Html.ListBox("products", new SelectList(ViewBag.Products), new { style = "height: 80px;" })</p>
+    
+    <button type="submit">Send</button>
+</form>

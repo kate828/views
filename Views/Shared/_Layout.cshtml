@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ViewTask</title>
+</head>
+<body>
+    <header>
+        <nav style="padding: 10px; background-color: #f8f9fa;">
+            <a href="/">ViewTask</a> | 
+            <a href="/">Home</a> | 
+            <a href="/Home/Privacy">Privacy</a> | 
+            <a href="/Tasks/SprintTasks">Sprint Tasks</a>
+        </nav>
+    </header>
+
+    <div style="padding: 20px;">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer style="padding: 10px; border-top: 1px solid #ccc; margin-top: 20px;">
+        <p>&copy; 2026 - ViewTask</p>
+    </footer>
+</body>
+</html>

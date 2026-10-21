@@ -1,0 +1,19 @@
+@{
+    string myMessage = "Hello C# Marathon!";
+    var now = DateTime.Now;
+    string greeting = now.Hour < 18 ? "Good Morning!" : "Good Evening!";
+}
+<h2>Greetings</h2>
+<p>The value of myMessage is: @myMessage</p>
+<p>The greeting is: Welcome to our project!</p>
+<p>Here in Ukraine: <u>@now.DayOfWeek</u></p>
+<p>We wish you: <u>@greeting</u></p>
+<p>Today is <u>@now.DayOfWeek</u></p>
+
+<table border="1" cellpadding="5">
+    <tr><th>Name</th><th>Value</th></tr>
+    <tr><td>Day</td><td>@now.Day</td></tr>
+    <tr><td>Hour</td><td>@now.Hour</td></tr>
+    <tr><td>Minute</td><td>@now.Minute</td></tr>
+    <tr><td>Second</td><td>@now.Second</td></tr>
+</table>

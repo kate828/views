@@ -1,0 +1,7 @@
+@inject ViewTask.Services.ITimeService TimeService
+<div style="border: 2px solid red; padding: 10px; display: inline-block;">
+    <h3 style="margin: 0;">It's time to shopping!</h3>
+    <br/>
+    <p style="margin: 0; display: inline-block;">@TimeService.GetTimeForTomorrow()</p>
+    <p style="color: red; margin: 0; float: right; font-size: 24px;">Partial view</p>
+</div>

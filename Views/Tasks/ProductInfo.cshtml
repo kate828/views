@@ -1,0 +1,22 @@
+@using ViewTask.Models
+@{
+    var products = new List<Product>
+    {
+        new Product { Name = "Bread", Price = 10 },
+        new Product { Name = "Milk", Price = 11 },
+        new Product { Name = "Cheese", Price = 140 },
+        new Product { Name = "Sausage", Price = 110 },
+        new Product { Name = "Potato", Price = 7 },
+        new Product { Name = "Banana", Price = 23 },
+        new Product { Name = "Tomato", Price = 25 },
+        new Product { Name = "Candy", Price = 75 }
+    };
+}
+<h2>Information about product</h2>
+<table border="0">
+    <tr align="left"><th>Name</th><th>Price</th></tr>
+    @foreach (var p in products)
+    {
+        <tr><td>@p.Name</td><td>@p.Price</td></tr>
+    }
+</table>
