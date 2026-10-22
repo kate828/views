@@ -26,3 +26,4 @@ C:\Users\katep\views\obj\Debug\net8.0\refint\views.dll
 C:\Users\katep\views\obj\Debug\net8.0\views.pdb
 C:\Users\katep\views\obj\Debug\net8.0\views.genruntimeconfig.cache
 C:\Users\katep\views\obj\Debug\net8.0\ref\views.dll
+C:\Users\katep\views\obj\Debug\net8.0\views.sourcelink.json

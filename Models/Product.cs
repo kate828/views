@@ -2,7 +2,8 @@ namespace ViewTask.Models
 {
     public class Product
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
         public double Price { get; set; }
     }
 }

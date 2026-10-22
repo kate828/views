@@ -1,0 +1,14 @@
+@model ViewTask.Models.Product
+
+<h2>Delete Product</h2>
+<h3>Are you sure you want to delete this product?</h3>
+
+<div>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Price:</strong> @Model.Price</p>
+</div>
+
+<form method="post">
+    <button type="submit" style="color: red;">Delete</button> | 
+    <a href="/products">Cancel</a>
+</form>

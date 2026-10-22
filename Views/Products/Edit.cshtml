@@ -1,0 +1,19 @@
+@model ViewTask.Models.Product
+
+<h2>Edit Product</h2>
+
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div>
+        <label>Name:</label><br />
+        <input type="text" name="Name" value="@Model.Name" required />
+    </div>
+    <br />
+    <div>
+        <label>Price:</label><br />
+        <input type="number" step="0.01" name="Price" value="@Model.Price" required />
+    </div>
+    <br />
+    <button type="submit">Save Changes</button>
+    <a href="/products">Cancel</a>
+</form>
