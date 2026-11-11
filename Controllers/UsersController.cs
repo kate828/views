@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ViewTask.Models;
 using ViewTask.Services;
 
 namespace ViewTask.Controllers
@@ -15,7 +16,6 @@ namespace ViewTask.Controllers
         {
             string? secretParam = null;
 
-            // Перевірка даних у тілі запиту (Form Body)
             if (Request.HasFormContentType && Request.Form.Count > 0)
             {
                 foreach (var key in Request.Form.Keys)
@@ -29,22 +29,37 @@ namespace ViewTask.Controllers
             }
             else if (Request.Body.CanRead)
             {
-                // Перевірка сирого тіла запиту (Raw Body)
                 using var reader = new StreamReader(Request.Body);
                 string body = await reader.ReadToEndAsync();
-                if (body.Contains("df2323eoT"))
-                {
-                    secretParam = "df2323eoT";
-                }
+                if (body.Contains("df2323eoT")) secretParam = "df2323eoT";
             }
 
-            // Якщо параметра в тілі запиту немає — повертаємо 401 Unauthorized
-            if (secretParam != "df2323eoT")
-            {
-                return Unauthorized();
-            }
+            if (secretParam != "df2323eoT") return Unauthorized();
 
             return View(DataStore.Users);
+        }
+
+        [HttpGet("create")]
+        public IActionResult Create([FromQuery] string username, [FromQuery] string email, [FromQuery] string role)
+        {
+            var user = new User { Username = username, Email = email, Role = role };
+            return View(user);
+        }
+
+        [HttpPost("create")]
+        public IActionResult Create(User user)
+        {
+            user.Id = DataStore.Users.Any() ? DataStore.Users.Max(u => u.Id) + 1 : 1;
+            DataStore.Users.Add(user);
+            return RedirectToAction(nameof(Details), new { id = user.Id });
+        }
+
+        [HttpGet("details/{id:int}")]
+        public IActionResult Details(int id)
+        {
+            var user = DataStore.Users.FirstOrDefault(u => u.Id == id);
+            if (user == null) return NotFound();
+            return View(user);
         }
     }
 }

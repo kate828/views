@@ -1,0 +1,13 @@
+@model ViewTask.Models.User
+
+<h2>User Details (View Mode)</h2>
+
+<div>
+    <p><strong>ID:</strong> @Model.Id</p>
+    <p><strong>Username:</strong> @Model.Username</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Role:</strong> @Model.Role</p>
+</div>
+
+<p style="color: green; font-weight: bold;">User successfully saved!</p>
+<a href="/users/create?username=Test&email=test@test.com&role=Guest">Test adding another user</a>

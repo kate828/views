@@ -13,12 +13,20 @@
 <p>
     <a href="/products/create">+ Create New Product</a>
 </p>
+<p>
+    <strong>Edit Category Prices:</strong>
+    <a href="/products/bulkedit/Toy">Toys</a> | 
+    <a href="/products/bulkedit/Technique">Technique</a> | 
+    <a href="/products/bulkedit/Clothes">Clothes</a> | 
+    <a href="/products/bulkedit/Transport">Transport</a>
+</p>
 
 <table border="1" cellpadding="8">
     <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Type</th>
             <th>Price</th>
             <th>Actions</th>
         </tr>
@@ -29,6 +37,7 @@
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Name</td>
+                <td>@item.Type</td>
                 <td>@item.Price</td>
                 <td>
                     <a href="/products/@item.Id">View</a> | 

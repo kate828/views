@@ -1,0 +1,23 @@
+@model ViewTask.Models.User
+
+<h2>Confirm New User Creation</h2>
+<p>Data received from Query String. Fields are readonly.</p>
+
+<form method="post">
+    <div style="margin-bottom: 10px;">
+        <label>Username:</label><br />
+        <input type="text" asp-for="Username" readonly style="background-color: #eee;" />
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label>Email:</label><br />
+        <input type="text" asp-for="Email" readonly style="background-color: #eee;" />
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label>Role:</label><br />
+        <input type="text" asp-for="Role" readonly style="background-color: #eee;" />
+    </div>
+    
+    <button type="submit">Save User</button>
+</form>
